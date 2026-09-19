@@ -1,0 +1,37 @@
+# Entorno virtual
+venv/
+
+# Variables de entorno y secretos
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Base de datos de desarrollo
+db.sqlite3
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+
+# Archivos de distribución y build
+*.egg-info/
+dist/
+build/
+
+# Pytest / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Variantes de entorno (secretos locales) -- mantener versionable solo la plantilla
+.env.*
+!.env.example
+
+# Artefactos locales de diagnóstico (Spec 01)
+/runserver_*.txt
+/capture_runserver.py

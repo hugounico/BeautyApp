@@ -1,0 +1,201 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Inicializar dependencias y archivo de entorno": [
+      {
+        "executionId": "42110fe4-e1a8-4db9-88bc-7e7cebd80d0c",
+        "chatSessionId": "sess_a25c8308-a236-4e8f-8286-cf9e39ed6874",
+        "timestamp": 1788405446755
+      }
+    ],
+    "2. Crear el paquete contenedor `apps/`": [
+      {
+        "executionId": "d51139cf-63c5-4f99-8689-fe2aa5610497",
+        "chatSessionId": "sess_1fdc8742-58ec-4d2d-90ed-8c0f1a75dc85",
+        "timestamp": 1788469936266
+      },
+      {
+        "executionId": "d51139cf-63c5-4f99-8689-fe2aa5610497",
+        "chatSessionId": "sess_1fdc8742-58ec-4d2d-90ed-8c0f1a75dc85",
+        "timestamp": 1788469964147
+      }
+    ],
+    "3.1 Scaffoldear la app con `.\\venv\\Scripts\\django-admin.exe startapp beauty_app apps/beauty_app` desde la raíz del repositorio.": [
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484508406
+      },
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484646408
+      }
+    ],
+    "3.2 Confirmar `models.py` y `views.py` generados por el comando.": [
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484511401
+      },
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484650755
+      }
+    ],
+    "3.3 Crear `apps/beauty_app/urls.py` con `urlpatterns = []` vacío.": [
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484515482
+      },
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484669602
+      }
+    ],
+    "3.4 Crear `apps/beauty_app/templates/base.html`.": [
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484518185
+      },
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484673144
+      }
+    ],
+    "3. Implementar la app núcleo `apps/beauty_app/`": [
+      {
+        "executionId": "ddae2ff7-9a58-4ea5-916b-4aa5444ebf54",
+        "chatSessionId": "sess_0cb7dac8-96da-4da0-94da-05ffa8995c76",
+        "timestamp": 1788484673233
+      }
+    ],
+    "4.1 Scaffoldear el proyecto con `.\\venv\\Scripts\\django-admin.exe startproject beautyfull .` desde la raíz del repositorio.": [
+      {
+        "executionId": "ed763a74-8820-4666-b48e-2d9e3bc7278f",
+        "chatSessionId": "sess_a58ecb21-1bb3-4fd6-90ce-e04200e39dcf",
+        "timestamp": 1788486216205
+      },
+      {
+        "executionId": "ed763a74-8820-4666-b48e-2d9e3bc7278f",
+        "chatSessionId": "sess_a58ecb21-1bb3-4fd6-90ce-e04200e39dcf",
+        "timestamp": 1788486307544
+      }
+    ],
+    "4.2 Crear `beautyfull/urls.py` como URLconf raíz.": [
+      {
+        "executionId": "ed763a74-8820-4666-b48e-2d9e3bc7278f",
+        "chatSessionId": "sess_a58ecb21-1bb3-4fd6-90ce-e04200e39dcf",
+        "timestamp": 1788486310344
+      },
+      {
+        "executionId": "ed763a74-8820-4666-b48e-2d9e3bc7278f",
+        "chatSessionId": "sess_a58ecb21-1bb3-4fd6-90ce-e04200e39dcf",
+        "timestamp": 1788486313280
+      }
+    ],
+    "4. Crear el paquete raíz `beautyfull/` y `manage.py`": [
+      {
+        "executionId": "ed763a74-8820-4666-b48e-2d9e3bc7278f",
+        "chatSessionId": "sess_a58ecb21-1bb3-4fd6-90ce-e04200e39dcf",
+        "timestamp": 1788486313375
+      }
+    ],
+    "5.1 Crear `beautyfull/settings/__init__.py` (vacío) y `base.py` con la configuración compartida.": [
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487308137
+      },
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487710350
+      }
+    ],
+    "5.2 Crear `dev.py` con `from .base import *`.": [
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487311132
+      },
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487713216
+      }
+    ],
+    "5.3 Crear `prod.py` con `from .base import *`.": [
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487313876
+      },
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487716113
+      }
+    ],
+    "5. Implementar el settings split en `beautyfull/settings/`": [
+      {
+        "executionId": "13511aae-752e-4cf0-9d01-c70374ac3d50",
+        "chatSessionId": "sess_134d9979-fa1a-4adc-9c5a-bd36125edd25",
+        "timestamp": 1788487716195
+      }
+    ],
+    "6. Crear el directorio `static/`": [
+      {
+        "executionId": "8006c5e4-7a14-48f5-81be-286c25562479",
+        "chatSessionId": "sess_526a479b-9146-445e-b848-dc8e807d8fd1",
+        "timestamp": 1788489140923
+      },
+      {
+        "executionId": "8006c5e4-7a14-48f5-81be-286c25562479",
+        "chatSessionId": "sess_526a479b-9146-445e-b848-dc8e807d8fd1",
+        "timestamp": 1788489181618
+      }
+    ],
+    "7. Implementar el smoke test": [
+      {
+        "executionId": "0f7188fa-3103-4975-8742-f4a87e45dceb",
+        "chatSessionId": "sess_d09911d7-acf3-4da7-8688-f2996b1a0891",
+        "timestamp": 1788489351960
+      },
+      {
+        "executionId": "0f7188fa-3103-4975-8742-f4a87e45dceb",
+        "chatSessionId": "sess_d09911d7-acf3-4da7-8688-f2996b1a0891",
+        "timestamp": 1788489399021
+      }
+    ],
+    "8. Verificar arranque limpio del proyecto (camino positivo)": [
+      {
+        "executionId": "dc9f096c-26c3-4f2d-87fa-5ca38a5ada4e",
+        "chatSessionId": "sess_e95532b0-1b72-4d59-b258-4639f2993065",
+        "timestamp": 1788490149182
+      },
+      {
+        "executionId": "dc9f096c-26c3-4f2d-87fa-5ca38a5ada4e",
+        "chatSessionId": "sess_e95532b0-1b72-4d59-b258-4639f2993065",
+        "timestamp": 1788490316596
+      }
+    ],
+    "9. Verificar el comportamiento de fallo por variable de entorno faltante (camino negativo)": [
+      {
+        "executionId": "c5ddbae5-4348-4b81-931c-9b7ea572d08e",
+        "chatSessionId": "sess_078ab509-0855-4c97-a71e-c1462dd3aeaf",
+        "timestamp": 1788491330451
+      },
+      {
+        "executionId": "c5ddbae5-4348-4b81-931c-9b7ea572d08e",
+        "chatSessionId": "sess_078ab509-0855-4c97-a71e-c1462dd3aeaf",
+        "timestamp": 1788491368980
+      }
+    ]
+  }
+}
