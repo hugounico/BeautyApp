@@ -15,6 +15,9 @@ INSTALLED_APPS = [
     # Apps del proyecto
     'apps.beauty_app',
     'apps.usuarios',
+    'apps.categorias',
+    'apps.proveedores',
+    'apps.servicios',
 ]
 
 MIDDLEWARE = [

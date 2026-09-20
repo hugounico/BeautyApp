@@ -1,0 +1,84 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "9. Generar y aplicar migraciones de las cuatro apps": [
+      {
+        "executionId": "4a771710-17c2-4bf7-b710-a737fb2824f5",
+        "chatSessionId": "sess_e9f5307b-bf1c-4fd6-826c-d4c4a9a700a7",
+        "timestamp": 1789932305516
+      },
+      {
+        "executionId": "4a771710-17c2-4bf7-b710-a737fb2824f5",
+        "chatSessionId": "sess_e9f5307b-bf1c-4fd6-826c-d4c4a9a700a7",
+        "timestamp": 1789932531441
+      }
+    ],
+    "10.1 Tests unitarios de `Categoria`": [
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933862475
+      },
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933993999
+      }
+    ],
+    "10.4 Tests unitarios de `Servicio`": [
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933863834
+      },
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933994926
+      }
+    ],
+    "10.5 Tests unitarios de `Usuario` y `Cliente`": [
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933864796
+      },
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933996318
+      }
+    ],
+    "10.6 Tests unitarios de `ProveedorProfesional`": [
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933865865
+      },
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933997134
+      }
+    ],
+    "10. Escribir tests por modelo": [
+      {
+        "executionId": "1f46fe2f-8ba1-4286-ae90-6d1f3844879d",
+        "chatSessionId": "sess_d5cae935-89e8-4e5a-aeaa-4d329634c65b",
+        "timestamp": 1789933997228
+      }
+    ],
+    "11. Verificación global del sistema": [
+      {
+        "executionId": "5aee10c1-815a-4be4-b6e0-019f43f17252",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1789934583775
+      },
+      {
+        "executionId": "5aee10c1-815a-4be4-b6e0-019f43f17252",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1789935172334
+      }
+    ]
+  }
+}
