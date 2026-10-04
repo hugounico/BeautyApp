@@ -1,0 +1,15 @@
+{% comment %}
+Bloque global de mensajes (R5.3).
+
+Recorre los mensajes activos del framework de mensajes de Django y los
+renderiza con marcado accesible. Cuando NO hay mensajes activos no se
+renderiza ningún elemento (ni contenedor vacío). Renderizado server-side,
+sin JavaScript.
+{% endcomment %}
+{% if messages %}
+<ul class="messages" role="status" aria-live="polite">
+    {% for message in messages %}
+    <li class="messages__item {{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}

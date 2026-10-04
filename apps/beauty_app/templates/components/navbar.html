@@ -1,0 +1,79 @@
+{% comment %}
+Navbar global responsive (R5.1, R5.2, R5.6-R5.10).
+
+Estado derivado SERVER-SIDE, localizado en este template, sin context
+processor, sin custom template tag y sin sistema de roles. Se usan las
+relaciones inversas reales sobre `user`: `perfil_proveedor` (R1) y
+`perfil_cliente`. En templates, acceder a una relación inversa OneToOne
+inexistente NO lanza error (Django silencia RelatedObjectDoesNotExist y la
+expresion resuelve a un valor falsy), por lo que `{% if user.perfil_* %}` es
+seguro y no produce un 500. Verificado contra los modelos reales.
+
+Prioridad exacta: anonimo -> proveedor -> cliente -> neutro
+(exactamente un estado por peticion, R5.10).
+{% endcomment %}
+<nav class="navbar" aria-label="Navegación principal">
+    <div class="navbar__inner">
+        <a class="navbar__brand" href="{% url 'home' %}">BeautyFull</a>
+
+        <button class="navbar__toggle"
+                type="button"
+                aria-controls="navbar-menu"
+                aria-expanded="false"
+                data-navbar-toggle>
+            <span class="navbar__toggle-bar"></span>
+            <span class="navbar__toggle-bar"></span>
+            <span class="navbar__toggle-bar"></span>
+            <span class="navbar__toggle-label">Menú</span>
+        </button>
+
+        <ul class="navbar__menu" id="navbar-menu" data-navbar-menu>
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'home' %}">Home</a>
+            </li>
+
+            {% if not user.is_authenticated %}
+            {% comment %} Estado ANÓNIMO (R5.6): Ingresar + Registrarse, sin logout. {% endcomment %}
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'login' %}">Ingresar</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'registro' %}">Registrarse</a>
+            </li>
+            {% elif user.perfil_proveedor %}
+            {% comment %} Estado PROVEEDOR (R5.7): tiene prioridad sobre cliente. {% endcomment %}
+            <li class="navbar__item navbar__item--state">
+                <span class="navbar__state" data-navbar-state="proveedor">Proveedor</span>
+            </li>
+            <li class="navbar__item">
+                <form class="navbar__logout" method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="navbar__logout-btn" type="submit">Salir</button>
+                </form>
+            </li>
+            {% elif user.perfil_cliente %}
+            {% comment %} Estado CLIENTE (R5.8). {% endcomment %}
+            <li class="navbar__item navbar__item--state">
+                <span class="navbar__state" data-navbar-state="cliente">Cliente</span>
+            </li>
+            <li class="navbar__item">
+                <form class="navbar__logout" method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="navbar__logout-btn" type="submit">Salir</button>
+                </form>
+            </li>
+            {% else %}
+            {% comment %} Estado NEUTRO (R5.9): autenticado sin perfil (p. ej. superusuario). {% endcomment %}
+            <li class="navbar__item navbar__item--state">
+                <span class="navbar__state" data-navbar-state="neutro">Mi cuenta</span>
+            </li>
+            <li class="navbar__item">
+                <form class="navbar__logout" method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="navbar__logout-btn" type="submit">Salir</button>
+                </form>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -9,6 +9,8 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+    {% include 'components/navbar.html' %}
+    {% include 'components/messages.html' %}
     {% block content %}{% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
     {% block extra_js %}{% endblock %}

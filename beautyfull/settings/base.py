@@ -62,6 +62,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom User Model (Decision 2 - data-model-core)
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+# Destinos de autenticación (Destino_Por_Defecto). Compartido por dev y prod.
+LOGIN_URL = 'login'            # a dónde enviar a un usuario no autenticado
+LOGIN_REDIRECT_URL = 'home'    # Destino_Por_Defecto tras login exitoso (R2.8)
+LOGOUT_REDIRECT_URL = 'home'   # Destino_Por_Defecto tras logout (R2.9)
+
+# Validadores de contraseña estándar de Django (R3.3). Sin opciones ni
+# parámetros personalizados: se usan los validadores por defecto.
+AUTH_PASSWORD_VALIDATORS = [
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+]
+
 # Archivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

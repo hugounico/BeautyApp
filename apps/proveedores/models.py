@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -8,6 +9,19 @@ class ModalidadChoices(models.TextChoices):
 
 
 class ProveedorProfesional(models.Model):
+    """Proveedor de servicios de belleza.
+
+    El vínculo con `Usuario` es OPCIONAL (null/blank): no todo proveedor
+    necesita una cuenta. Difiere del vínculo de `Cliente`, que es REQUERIDO.
+    Ambos usan on_delete=CASCADE. (R1.7, declarativo)
+    """
+    usuario = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='perfil_proveedor',
+    )
     nombre_comercial = models.CharField(max_length=150)
     es_negocio = models.BooleanField(default=False)
     modalidad = models.CharField(

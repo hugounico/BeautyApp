@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrarse · BeautyFull{% endblock %}
+
+{% block content %}
+<main class="auth">
+    <h1>Crear cuenta de cliente</h1>
+
+    {% if form.non_field_errors %}
+    <div class="auth__error" role="alert">
+        {{ form.non_field_errors }}
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'registro' %}" class="auth__form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarme</button>
+    </form>
+</main>
+{% endblock %}

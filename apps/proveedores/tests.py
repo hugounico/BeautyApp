@@ -1,7 +1,13 @@
+from django.contrib.admin.sites import site as admin_site
+from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
-from django.test import TestCase
+from django.db import IntegrityError, models, transaction
+from django.test import RequestFactory, TestCase
 
+from apps.proveedores.admin import ProveedorProfesionalAdmin
 from apps.proveedores.models import ModalidadChoices, ProveedorProfesional
+
+Usuario = get_user_model()
 
 
 class ProveedorProfesionalModelTests(TestCase):
@@ -79,3 +85,101 @@ class ProveedorProfesionalModelTests(TestCase):
             proveedor.full_clean()
 
         self.assertIn('nombre_comercial', contexto.exception.message_dict)
+
+
+class ProveedorUsuarioVinculoTests(TestCase):
+    """Tests del vínculo opcional Usuario ⇄ ProveedorProfesional (R1)."""
+
+    def test_campo_usuario_definicion(self):
+        """R1.1: el campo `usuario` es OneToOne con related_name='perfil_proveedor',
+        null=True, blank=True y on_delete=CASCADE."""
+        campo = ProveedorProfesional._meta.get_field('usuario')
+
+        self.assertIsInstance(campo, models.OneToOneField)
+        self.assertEqual(campo.remote_field.related_name, 'perfil_proveedor')
+        self.assertTrue(campo.null)
+        self.assertTrue(campo.blank)
+        self.assertEqual(campo.remote_field.on_delete, models.CASCADE)
+        self.assertEqual(campo.remote_field.model, Usuario)
+
+    def test_guardar_sin_usuario(self):
+        """R1.2 / R1.6: guardar un ProveedorProfesional sin `usuario` no lanza error
+        y el campo queda nulo (equivalente a filas existentes tras la migración
+        nullable sin backfill)."""
+        proveedor = ProveedorProfesional.objects.create(
+            nombre_comercial='Proveedor Sin Cuenta',
+        )
+
+        self.assertIsNone(proveedor.usuario)
+        proveedor.refresh_from_db()
+        self.assertIsNone(proveedor.usuario)
+
+    def test_usuario_ya_vinculado_es_rechazado(self):
+        """R1.3: asociar un Usuario ya vinculado a otro ProveedorProfesional es
+        rechazado por unicidad del OneToOneField; el vínculo previo queda intacto."""
+        usuario = Usuario.objects.create_user(username='prov_uno', password='Clave12345!')
+        primero = ProveedorProfesional.objects.create(
+            nombre_comercial='Proveedor Primero',
+            usuario=usuario,
+        )
+
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                ProveedorProfesional.objects.create(
+                    nombre_comercial='Proveedor Segundo',
+                    usuario=usuario,
+                )
+
+        primero.refresh_from_db()
+        self.assertEqual(primero.usuario_id, usuario.pk)
+        self.assertEqual(
+            ProveedorProfesional.objects.filter(usuario=usuario).count(),
+            1,
+        )
+
+    def test_cascade_al_borrar_usuario(self):
+        """R1.4: borrar el Usuario vinculado elimina su ProveedorProfesional (CASCADE)."""
+        usuario = Usuario.objects.create_user(username='prov_cascade', password='Clave12345!')
+        proveedor = ProveedorProfesional.objects.create(
+            nombre_comercial='Proveedor Cascade',
+            usuario=usuario,
+        )
+        proveedor_pk = proveedor.pk
+
+        usuario.delete()
+
+        self.assertFalse(
+            ProveedorProfesional.objects.filter(pk=proveedor_pk).exists(),
+        )
+
+    def test_usuario_sin_cliente_ni_proveedor(self):
+        """R1.8: un Usuario puede existir sin Cliente ni ProveedorProfesional
+        (sin exclusión mutua ni sistema de roles)."""
+        usuario = Usuario.objects.create_user(username='usuario_neutro', password='Clave12345!')
+
+        self.assertFalse(hasattr(usuario, 'perfil_cliente'))
+        self.assertFalse(hasattr(usuario, 'perfil_proveedor'))
+
+
+class ProveedorProfesionalAdminTests(TestCase):
+    """Tests del admin del vínculo (R1.5)."""
+
+    def test_usuario_es_editable_en_admin(self):
+        """R1.5: el admin expone `usuario` como campo editable (asociar/desasociar)."""
+        admin_obj = ProveedorProfesionalAdmin(ProveedorProfesional, admin_site)
+
+        # `usuario` está expuesto y no es de solo lectura.
+        self.assertIn('usuario', admin_obj.fields)
+        self.assertNotIn('usuario', admin_obj.get_readonly_fields(request=None))
+
+        # El form del admin incluye `usuario` como campo editable. Se usa un
+        # request con superusuario porque el admin consulta permisos de
+        # relaciones al construir el formulario.
+        admin_usuario = Usuario.objects.create_superuser(
+            username='admin_r15', password='Clave12345!'
+        )
+        request = RequestFactory().get('/')
+        request.user = admin_usuario
+
+        form_class = admin_obj.get_form(request)
+        self.assertIn('usuario', form_class.base_fields)

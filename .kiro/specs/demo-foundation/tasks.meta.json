@@ -1,0 +1,171 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "2.1 Configurar destinos de autenticación en settings": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067763026
+      }
+    ],
+    "2.2 Implementar vistas de login y logout nativas": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067764073
+      }
+    ],
+    "2.3 Plantilla de login y rutas con nombre": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067764953
+      }
+    ],
+    "2. R2 — Autenticación nativa en `apps.usuarios`": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067765061
+      }
+    ],
+    "7.1 Home mínima y ruta con nombre": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067766345
+      }
+    ],
+    "3. Checkpoint — Asegurar que los tests pasan": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067767046
+      }
+    ],
+    "2.4 Tests de autenticación": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067800233
+      }
+    ],
+    "4.1 Implementar `RegistroClienteForm`": [
+      {
+        "executionId": "006b80fd-d697-48dd-b61b-a06e91774704",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791067805621
+      }
+    ],
+    "5.1 Crear el esqueleto del management command": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136668664
+      }
+    ],
+    "5.2 Fail-before-write de contraseñas desde entorno": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136669577
+      }
+    ],
+    "5.3 Dataset idempotente dentro de una transacción atómica": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136670495
+      }
+    ],
+    "5.4 Usuarios demo y selección determinista del proveedor con cuenta": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136671993
+      }
+    ],
+    "5.5 Resumen de salida y documentación de variables": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136672943
+      }
+    ],
+    "5. R4 — Comando `seed_demo` en `apps.beauty_app`": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136673060
+      }
+    ],
+    "5.6 Tests del comando `seed_demo`": [
+      {
+        "executionId": "8741cee3-98cb-4d38-a317-0913659f5b9f",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791136677952
+      }
+    ],
+    "7.2 Componentes globales navbar y mensajes": [
+      {
+        "executionId": "e352ecf7-7991-4dd0-a880-329f17f39ff4",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791138445188
+      }
+    ],
+    "7.3 Evolucionar `base.html` e integrar CSS/JS estáticos": [
+      {
+        "executionId": "e352ecf7-7991-4dd0-a880-329f17f39ff4",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791138446904
+      }
+    ],
+    "7. R5 — Shell visual base en `apps.beauty_app`": [
+      {
+        "executionId": "e352ecf7-7991-4dd0-a880-329f17f39ff4",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791138447005
+      }
+    ],
+    "7.4 Tests del shell visual": [
+      {
+        "executionId": "e352ecf7-7991-4dd0-a880-329f17f39ff4",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791138451268
+      }
+    ],
+    "8.1 Test del escenario integral": [
+      {
+        "executionId": "4aef1c7d-158e-483d-9549-eafea4edb058",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791139024065
+      },
+      {
+        "executionId": "4aef1c7d-158e-483d-9549-eafea4edb058",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791139891725
+      }
+    ],
+    "8.2 Verificación de calidad y no-regresión": [
+      {
+        "executionId": "4aef1c7d-158e-483d-9549-eafea4edb058",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791139897525
+      }
+    ],
+    "8. R6 — Escenario integral y verificación de no-regresión": [
+      {
+        "executionId": "4aef1c7d-158e-483d-9549-eafea4edb058",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791139897621
+      }
+    ],
+    "6. Checkpoint — Asegurar que los tests pasan": [
+      {
+        "executionId": "4aef1c7d-158e-483d-9549-eafea4edb058",
+        "chatSessionId": "sess_23a7fe70-3e19-49b6-a94b-59d51cb101d0",
+        "timestamp": 1791139907433
+      }
+    ]
+  }
+}

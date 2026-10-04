@@ -1,0 +1,239 @@
+/*
+ * BeautyFull — shell visual base (R5.1, R5.2)
+ * Mobile-first, responsive. Sin frameworks externos ni CDN.
+ * Paleta neutra mínima vía custom properties para poder tematizar luego
+ * (el design-system steering aún no define paleta concreta).
+ */
+
+:root {
+    --color-bg: #ffffff;
+    --color-surface: #f4f4f5;
+    --color-text: #1f2933;
+    --color-muted: #52606d;
+    --color-accent: #7b5e8c;
+    --color-accent-contrast: #ffffff;
+    --color-border: #d9dde1;
+    --color-info-bg: #e6f0fb;
+    --color-success-bg: #e3f4e8;
+    --color-warning-bg: #fdf3e0;
+    --color-error-bg: #fbe6e6;
+
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+
+    --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --navbar-breakpoint: 48rem; /* referencia; el media query usa el mismo valor */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin: 0 0 var(--space-md);
+}
+
+a {
+    color: var(--color-accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Navbar — mobile-first: menú colapsado por defecto, toggle visible.  */
+/* ------------------------------------------------------------------ */
+
+.navbar {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.navbar__brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.navbar__toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.navbar__toggle-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-text);
+}
+
+.navbar__toggle-label {
+    font-size: 0.75rem;
+}
+
+/*
+ * Menú: por defecto (sin JS) se muestra, manteniendo la navegación usable
+ * como mejora progresiva. Con JS (html.js) se colapsa en móvil y se abre al
+ * activar el toggle.
+ */
+.navbar__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.js .navbar__menu {
+    display: none;
+}
+
+.js .navbar__menu.is-open {
+    display: flex;
+}
+
+.navbar__item {
+    width: 100%;
+}
+
+.navbar__link,
+.navbar__state,
+.navbar__logout-btn {
+    display: block;
+    width: 100%;
+    padding: var(--space-sm) 0;
+    text-decoration: none;
+    color: var(--color-text);
+    font: inherit;
+    text-align: left;
+}
+
+.navbar__state {
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+.navbar__logout {
+    margin: 0;
+}
+
+.navbar__logout-btn {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    border: none;
+    border-radius: 4px;
+    padding: var(--space-sm) var(--space-md);
+    width: auto;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/* Mensajes (R5.3)                                                      */
+/* ------------------------------------------------------------------ */
+
+.messages {
+    list-style: none;
+    margin: var(--space-md);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.messages__item {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.messages__item.info {
+    background-color: var(--color-info-bg);
+}
+
+.messages__item.success {
+    background-color: var(--color-success-bg);
+}
+
+.messages__item.warning {
+    background-color: var(--color-warning-bg);
+}
+
+.messages__item.error {
+    background-color: var(--color-error-bg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Contenido                                                            */
+/* ------------------------------------------------------------------ */
+
+.home,
+.auth {
+    padding: var(--space-lg) var(--space-md);
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Desktop / tablet: escalar hacia arriba desde el diseño mobile.      */
+/* ------------------------------------------------------------------ */
+
+@media (min-width: 48rem) {
+    .navbar__toggle {
+        display: none;
+    }
+
+    .navbar__menu,
+    .js .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        gap: var(--space-md);
+    }
+
+    .navbar__item {
+        width: auto;
+    }
+
+    .navbar__link,
+    .navbar__state,
+    .navbar__logout-btn {
+        width: auto;
+        padding: var(--space-xs) var(--space-sm);
+    }
+}
